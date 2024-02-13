@@ -2,9 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Container from "../components/container.astro";
 import Sectionhead from "../components/sectionhead.astro";
-import Pricing from "../components/pricing.astro";
+import Pricing2 from "../components/pricing.astro";
 
-const pricing = [
+const data = [
   {
     name: "Personal",
     price: "Free",
@@ -74,7 +74,7 @@ const pricing = [
     </Sectionhead>
 
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-      {pricing.map((item) => <Pricing plan={item} />)}
+      {data.map((item) => <Pricing2 plan={item} />)}
     </div>
   </Container>
 </Layout>
