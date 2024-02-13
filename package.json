@@ -16,6 +16,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.3.0",
     "@types/alpinejs": "^3.13.6",
+    "@fontsource/inter": "^4.5.14",
     "alpinejs": "^3.13.5",
     "astro": "^4.3.6",
     "astro-icon": "^0.8.0",
