@@ -1,13 +1,14 @@
 ---
-interface Props {
-  title: string;
-}
-import { SEO } from "astro-seo";
-const { title } = Astro.props;
-const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.url).toString();
-import Navbar from "../components/navbar/navbar.astro";
-import Footer from "../components/footer.astro";
+  import { SEO } from "astro-seo";
+  import Navbar from "../components/navbar/navbar.astro";
+  import Footer from "../components/footer.astro";
 
+  interface Props {
+    title: string;
+  }
+  
+  const { title } = Astro.props;
+  const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.url).toString();
 ---
 
 <!doctype html>
