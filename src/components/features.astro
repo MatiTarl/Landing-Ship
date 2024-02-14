@@ -1,6 +1,7 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon";
+import About from "./about.astro"
 
 const features = [
   {
@@ -51,13 +52,13 @@ const features = [
     tools and adds its own innovations.
   </p>
 </div>
-
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<About />
+ <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
         <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon name ={item.icon} class="text-white" />
+          <Icon name={item.icon} class="text-white" />
         </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}

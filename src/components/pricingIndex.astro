@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Container from "../components/container.astro";
-import Sectionhead from "../components/sectionhead.astro";
-import Pricing2 from "../components/pricing.astro";
+import Container from "./container.astro";
+import Sectionhead from "./sectionhead.astro";
+import Pricing2 from "./pricing.astro";
 
 const data = [
   {
@@ -64,8 +64,7 @@ const data = [
 ];
 ---
 
-<Layout title="Pricing">
-  <Container>
+<main>
     <Sectionhead>
       <Fragment slot="title">Pricing</Fragment>
       <Fragment slot="desc"
@@ -76,5 +75,4 @@ const data = [
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
       {data.map((item) => <Pricing2 plan={item} />)}
     </div>
-  </Container>
-</Layout>
+</main>
