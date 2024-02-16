@@ -1,14 +1,6 @@
 ---
 
 
-const dataToMap: Array = [
-  {
-    title: "",
-    description: ""
-  },
-]
-
-
 ---
 <main >
   <head>
@@ -93,12 +85,12 @@ const dataToMap: Array = [
                   this.$store.accordion.tab =
                     this.$store.accordion.tab === this.idx ? 0 : this.idx;
                 },
-                handleRotate() {
+                handleRotate(): any {
                   return this.$store.accordion.tab === this.idx
                     ? "rotate-180"
                     : "";
                 },
-                handleToggle() {
+                handleToggle(): any {
                   return this.$store.accordion.tab === this.idx
                     ? `max-height: ${this.$refs.tab.scrollHeight}px`
                     : "";

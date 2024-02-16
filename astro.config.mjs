@@ -4,9 +4,11 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import alpinejs from "@astrojs/alpinejs";
 
+import preact from "@astrojs/preact";
+
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: vercel(),
-  integrations: [tailwind(), alpinejs(), mdx()]
+  integrations: [tailwind(), alpinejs(), mdx(), preact()]
 });
