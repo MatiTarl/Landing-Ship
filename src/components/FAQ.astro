@@ -1,8 +1,8 @@
 ---
-
-
+export const prerender = true;
 ---
-<main >
+
+<main>
   <head>
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
@@ -14,90 +14,383 @@
       <div class="flex justify-center items-start my-2">
         <div class="w-full lg:w-10/12 my-1">
           <h2 class="text-xl font-semibold text-vnet-blue mb-2 text-center">
-            Preguntas frecuentes
+            FAQ
           </h2>
           <ul class="flex flex-col">
-            <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
-              <h2
-                @click="handleClick()"
-                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
-              >
-                <span>Pregunta de Prueba</span>
-                <svg
-                  :class="handleRotate()"
-                  class="fill-current text-black-700 h-6 w-6 transform transition-transform duration-500"
-                  viewBox="0 0 20 20"
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input1"
+                class="peer/pregunta1 opacity-0 absolute w-full items-center cursor-pointer mt-3.5"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input1"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
                 >
-                  <path
-                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"
-                  ></path>
-                </svg>
-              </h2>
+                  <!-- {dataToMap[0].pregunta} -->
+                  ¿Qué es Startup Studio by ProtolyLab?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta1:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
               <div
-                x-ref="tab"
-                :style="handleToggle()"
-                class=" overflow-hidden max-h-0 duration-500 transition-all"
+                class="max-h-0 overflow-hidden peer-checked/pregunta1:max-h-full"
               >
                 <p class="p-3 text-gray-900">
-                  Respuesta de Prueba
+                  <!-- {dataToMap[0].respuesta} -->
+                  Está diseñado para emprendedores que no quieren o pueden levantar
+                  Capital de Riesgo (VC). Esto representan a más del 99% de los propietarios
+                  de negocios. <br /><br />La mayoría de las empresas no
+                  requieren financiación externa, se debe evitar un crecimiento
+                  rápido e insostenible y no deben regalar participación en su
+                  empresa a inversores de riesgos que no aportan valor, si no
+                  aliados estratégicos que te agreguen valor contigo. <br /><br
+                  /> Nuestro objetivo es ayudar a los emprendedores (a) a obtener
+                  la financiación más asequible: de los ingresos generados por los
+                  clientes. Un crecimiento orgánico. <br /><br /> Crear una gran
+                  empresa sin financiación externa es factible, como lo demuestra
+                  la venta de Mail Chimp de 12 000 millones de dólares.
                 </p>
               </div>
             </li>
-            <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
-              <h2
-                @click="handleClick()"
-                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer"
-              >
-                <span>Pregunta de Prueba</span>
-                <svg
-                  :class="handleRotate()"
-                  class="fill-current text-black-700 h-6 w-6 transform transition-transform duration-500"
-                  viewBox="0 0 20 20"
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input2"
+                class="peer/pregunta2 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input2"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
                 >
-                  <path
-                    d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10"
-                  ></path>
-                </svg>
-              </h2>
+                  <!-- {dataToMap[1].pregunta} -->
+                  ¿Tienen alguna experiencia fundando compañías?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta2:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
               <div
-                x-ref="tab"
-                :style="handleToggle()"
-                class=" overflow-hidden max-h-0 duration-500 transition-all"
+                class="max-h-0 overflow-hidden peer-checked/pregunta2:max-h-full"
               >
                 <p class="p-3 text-gray-900">
-                  Respuesta de Prueba
+                  <!-- {dataToMap[1].respuesta} -->
+                  Sí. hemos incubado y fundado más de 9 emprendimientos desde 2012
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input4"
+                class="peer/pregunta3 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input4"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[2].pregunta} -->
+                  ¿En qué se diferencia de otras incubadoras?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta3:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta3:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[2].respuesta} -->
+                  En primer lugar, a diferencia de muchos inversores que fomentan
+                  la recaudación de más fondos para un crecimiento rápido, inflar
+                  su TVPI y soñar con una Oferta Pública Inicial, nosotros nos centramosen
+                  el crecimiento sostenible sin la presión de la inversión externa.<br
+                  /><br />
+                  En segundo lugar, si bien hay errores empresariales comunes, el
+                  recorrido de cada startup es único. No te damos una receta o temario
+                  a seguir; sino que nos asociamos contigo y te acompañamos en tu
+                  viaje único. <br /><br /> Tercero: agregamos valor en la construcción
+                  de un producto mínimo viable co financiado, si no cuentas con un
+                  computín (CTO; director de tecnología) o no posees las capacidades
+                  técnicas para programar o no sabes aún reclutar y orquestar un
+                  equipo TI.
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input3"
+                class="peer/pregunta4 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input3"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  ¿Tienen alguna experiencia fundando compañías?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta4:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta4:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  Sí. hemos incubado y fundado más de 9 emprendimientos desde 2012
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input5"
+                class="peer/pregunta5 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input5"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  ¿En qué se diferencia de otras incubadoras?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta5:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta5:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  En primer lugar, a diferencia de muchos inversores que fomentan
+                  la recaudación de más fondos para un crecimiento rápido, inflar
+                  su TVPI y soñar con una Oferta Pública Inicial, nosotros nos centramos
+                  en el crecimiento sostenible sin la presión de la inversión externa.<br
+                  /><br />
+                  En segundo lugar, si bien hay errores empresariales comunes, el
+                  recorrido de cada startup es único. No te damos una receta o temario
+                  a seguir; sino que nos asociamos contigo y te acompañamos en tu
+                  viaje único. <br /><br /> Tercero: agregamos valor en la construcción
+                  de un producto mínimo viable co financiado, si no cuentas con un
+                  computín (CTO; director de tecnología) o no posees las capacidades
+                  técnicas para programar o no sabes aún reclutar y orquestar un
+                  equipo TI.
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input6"
+                class="peer/pregunta6 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input6"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  ¿El programa es completamente remoto o presencial?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta6:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta6:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  El programa es totalmente en remoto.
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input7"
+                class="peer/pregunta7 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input7"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  ¿Cuáles son sus condiciones?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta7:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta7:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  Te pediremos:
+                  <br /><br />
+                  • 25% de equity durante los primeros 24 meses <br /><br />•
+                  Nos diluimos al 20% desde el mes 25
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input8"
+                class="peer/pregunta8 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input8"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  ¿Cuáles son los requisitos para unirse al programa?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta8:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta8:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  1. Una mente abierta, ganas de aprender y colaborar en remoto <br
+                  /><br />2. El equipo co fundador deberá al momento de lanzar
+                  el MVP trabajar a tiempo completo <br /><br />3. Distribución
+                  accionaria igualitaria entre fundadores.<br /><br /> 4 Los emprendedores
+                  proveerán:<br />-Operación: Los fundadores dirigirán la
+                  operación diaria de la startup. <br />-Visión y Manejo:
+                  Proporcionarán la visión, rumbo y manejo estratégico de la
+                  startup
+                  <br />-Ejecución de Primer Nivel: Compromiso diario de 4 a 8
+                  horas
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input9"
+                class="peer/pregunta9 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input9"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  ¿Qué tipo de emprendedores (a) están buscando?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta9:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta9:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  Idealmente, estamos buscando emprendedores que:<br /><br /> • Estén autofinanciados
+                  (a) con amigos, familiares o recursos propios<br /> • Tengan al menos
+                  uno o dos cofundadores en su equipo<br /> • Sean una empresa basada en
+                  software o puedan beneficiarse de la implementación de software
+                  <br />• No hayan recaudado una gran cantidad de dinero de capitalistas
+                  de riesgo Dicho esto, si no cumples con los criterios, aún te invitamos
+                  a postularte. Leemos todas las solicitudes y evaluamos a cada solicitante
+                  individualmente, basándonos en el contexto de su negocio y equipo.
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input10"
+                class="peer/pregunta10 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input10"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  Si mi emprendimiento es aceptado, ¿obtendré una inversión de efectivo?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta10:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta10:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  No como parte del programa de aceleración.
+                </p>
+              </div>
+            </li>
+            <li class="bg-white my-2 shadow-lg flex-col rounded-sm">
+              <input
+                type="checkbox"
+                id="input11"
+                class="peer/pregunta11 absolute w-full items-center cursor-pointer mt-3.5 opacity-0"
+              />
+              <div class="flex justify-between">
+                <label
+                  for="input11"
+                  class="flex flex-row items-start font-semibold cursor-pointer p-3 w-[80%] sm:w-auto"
+                >
+                  <!-- {dataToMap[3].pregunta} -->
+                  ¿Cuánto dura el programa?
+                </label>
+                <div
+                  class="flex rotate-0 peer-checked/pregunta11:rotate-180 font-semibold p-3 cursor-pointer justify-end items-center"
+                >
+                  <div class="w-[10px] h-[10px] rounded-full bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="max-h-0 overflow-hidden peer-checked/pregunta11:max-h-full"
+              >
+                <p class="p-3 text-gray-900">
+                  <!-- {dataToMap[3].respuesta} -->
+                  Después de los primeros 24 meses, revisaremos el acuerdo. Si no continuamos, nuestra participación en los ingresos.
                 </p>
               </div>
             </li>
           </ul>
-          <script>
-            document.addEventListener("alpine:init", () => {
-              Alpine.store("accordion", {
-                tab: 0,
-              });
-
-              Alpine.data("accordion", (idx) => ({
-                init() {
-                  this.idx = idx;
-                },
-                idx: -1,
-                handleClick() {
-                  this.$store.accordion.tab =
-                    this.$store.accordion.tab === this.idx ? 0 : this.idx;
-                },
-                handleRotate(): any {
-                  return this.$store.accordion.tab === this.idx
-                    ? "rotate-180"
-                    : "";
-                },
-                handleToggle(): any {
-                  return this.$store.accordion.tab === this.idx
-                    ? `max-height: ${this.$refs.tab.scrollHeight}px`
-                    : "";
-                },
-              }));
-            });
-          </script>
         </div>
       </div>
     </main>
